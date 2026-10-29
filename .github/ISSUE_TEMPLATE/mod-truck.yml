@@ -1,0 +1,49 @@
+name: Mod truck or trailer report
+description: A modded truck or trailer shows missing or wrong data in the Atelier configurator.
+title: "[Mod] "
+labels: ["mod-report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Atelier's **Report** button fills this in for you; please check it before submitting.
+        Only include what is shown here — no save files, folder paths or mod files.
+  - type: input
+    id: mod
+    attributes:
+      label: Mod
+      description: Mod name as shown in the ATS Mod Manager (and author, if known).
+    validations:
+      required: true
+  - type: input
+    id: workshop
+    attributes:
+      label: Steam Workshop ID or local file name
+      description: e.g. 1815959194, or the .scs/.zip file name for mods outside the Workshop.
+  - type: input
+    id: model
+    attributes:
+      label: Truck or trailer model
+      description: e.g. Kenworth K100E (truck:kenworth.k100e_of)
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What's wrong
+      options:
+        - Mod could not be read (locked or unsupported archive)
+        - Parts missing (engine, transmission, cabin, chassis…)
+        - Values look wrong (torque, ratios, prices…)
+        - Model missing entirely
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: problems
+    attributes:
+      label: Details Atelier found
+      description: Filled in automatically; add anything you noticed in the game.
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: Atelier version and ATS version.
